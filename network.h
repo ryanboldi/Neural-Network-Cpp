@@ -8,8 +8,8 @@
 
 class Network{
     private:
-        Node* Nodes;
-        Connection* Connections;
+        std::vector<Node> Nodes;
+        std::vector<Connection> Connections;
     
     public:
         Network();

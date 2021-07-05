@@ -5,13 +5,17 @@
 
 class Node {
     private:
+        const int mID;
         double mValue;
 
     public:
-        Node();
-        Node(double v);
+        Node(int Id);
+        Node(int Id, double v);
+
         double getValue();
         void setValue(double v);
+
+        int getId();
 
         void incValue(double num);
 

@@ -7,8 +7,8 @@
 using namespace std;
 
 int main(){
-    Node n(0);
-    Node n1(2);
+    Node n(0, 0.1);
+    Node n1(1);
 
     Connection c(&n, &n1, 2);
     cout << c << endl;

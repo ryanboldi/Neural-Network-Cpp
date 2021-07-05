@@ -1,9 +1,9 @@
 #include "node.h"
 
 //default constructor
-Node::Node() {};
+Node::Node(int Id) : mID(Id), mValue(0) {}
 
-Node::Node(double v): mValue(v) {
+Node::Node(int Id, double v): mValue(v), mID(Id) {
 
 }
 
@@ -13,6 +13,10 @@ double Node::getValue(){
 
 void Node::setValue(double v){
     mValue = v;
+}
+
+int Node::getId(){
+    return mID;
 }
 
 void Node::incValue(double num){
