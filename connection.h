@@ -19,6 +19,8 @@ class Connection{
         float getWeight();
         void setWeight(float w);
 
+        void feedForward();
+
         friend ostream& operator<<(ostream& os, const Connection& con);
 };
 

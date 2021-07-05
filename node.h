@@ -3,13 +3,15 @@
 
 class Node {
     private:
-        int mValue;
+        float mValue;
 
     public:
         Node();
-        Node(int v);
-        int getValue();
-        void setValue(int v);
+        Node(float v);
+        float getValue();
+        void setValue(float v);
+
+        void incValue(float num);
 };
 
 #endif
