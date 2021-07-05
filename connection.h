@@ -1,16 +1,25 @@
 #ifndef CONNECTION_H
 #define CONNECTION_H
 
+#include <iostream>
+using namespace std;
+
+#include "node.h"
+
 class Connection{
     private:
         float mWeight;
+        Node *mFrom;
+        Node *mTo;
     
     public:
-        Connection(); //generate randomly
-        Connection(float w);
+        Connection(); 
+        Connection(Node* f, Node* t, float w);
 
         float getWeight();
         void setWeight(float w);
+
+        friend ostream& operator<<(ostream& os, const Connection& con);
 };
 
 #endif

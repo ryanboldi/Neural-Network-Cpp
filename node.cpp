@@ -1,9 +1,9 @@
 #include "node.h"
 
 //default constructor
-Node::Node(int v): mValue(v) {
-    //will do some connection work here
-}
+Node::Node() {};
+
+Node::Node(int v): mValue(v) {}
 
 int Node::getValue(){
     return mValue;

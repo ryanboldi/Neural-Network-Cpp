@@ -6,5 +6,9 @@
 using namespace std;
 
 int main(){
-    Node n(3);
+    Node n;
+    Node n1;
+
+    Connection c(&n, &n1, 2.0);
+    cout << c << endl;
 }

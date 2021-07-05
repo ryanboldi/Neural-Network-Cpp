@@ -6,6 +6,7 @@ class Node {
         int mValue;
 
     public:
+        Node();
         Node(int v);
         int getValue();
         void setValue(int v);
