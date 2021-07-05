@@ -8,16 +8,16 @@ using namespace std;
 
 class Connection{
     private:
-        float mWeight;
+        double mWeight;
         Node *mFrom;
         Node *mTo;
     
     public:
         Connection(); 
-        Connection(Node* f, Node* t, float w);
+        Connection(Node* f, Node* t, double w);
 
-        float getWeight();
-        void setWeight(float w);
+        double getWeight();
+        void setWeight(double w);
 
         void feedForward();
 

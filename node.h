@@ -1,17 +1,21 @@
 #ifndef NODE_H
 #define NODE_H
 
+#include <functional>
+
 class Node {
     private:
-        float mValue;
+        double mValue;
 
     public:
         Node();
-        Node(float v);
-        float getValue();
-        void setValue(float v);
+        Node(double v);
+        double getValue();
+        void setValue(double v);
 
-        void incValue(float num);
+        void incValue(double num);
+
+        void activate();
 };
 
 #endif

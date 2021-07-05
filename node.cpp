@@ -3,16 +3,18 @@
 //default constructor
 Node::Node() {};
 
-Node::Node(float v): mValue(v) {}
+Node::Node(double v): mValue(v) {
 
-float Node::getValue(){
+}
+
+double Node::getValue(){
     return mValue;
 }
 
-void Node::setValue(float v){
+void Node::setValue(double v){
     mValue = v;
 }
 
-void Node::incValue(float num){
+void Node::incValue(double num){
     mValue += num;
 }

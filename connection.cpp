@@ -3,7 +3,7 @@
 
 using namespace std;
 
-Connection::Connection(Node* f, Node* t, float w) : mWeight(w), mFrom(f), mTo(t) {
+Connection::Connection(Node* f, Node* t, double w) : mWeight(w), mFrom(f), mTo(t) {
     //put all connection logic
 }
 
@@ -11,11 +11,11 @@ Connection::Connection() {
 
 }
 
-float Connection::getWeight(){
+double Connection::getWeight(){
     return mWeight;
 }
 
-void Connection::setWeight(float w){
+void Connection::setWeight(double w){
     mWeight = w;
 }
 
