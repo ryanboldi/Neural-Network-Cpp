@@ -8,8 +8,9 @@ using namespace std;
 
 class Connection{
     private:
-        double mWeight;
-        Node *mFrom;
+        double mWeight; //weight of connection
+        double mCache; // cache of current from.value * weight
+        Node *mFrom; //address of the nodes
         Node *mTo;
     
     public:
@@ -18,6 +19,9 @@ class Connection{
 
         double getWeight();
         void setWeight(double w);
+
+        double getCache();
+        void cacheResult();
 
         void feedForward();
 

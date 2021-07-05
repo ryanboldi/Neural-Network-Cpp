@@ -13,7 +13,7 @@ class Network{
     
     public:
         Network();
-        Network(std::vector<int> layers);
+        Network(int inp, int hid, int out);
 };
 
 

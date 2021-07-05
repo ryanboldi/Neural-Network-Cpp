@@ -1,8 +1,6 @@
 #ifndef NODE_H
 #define NODE_H
 
-#include <functional>
-
 class Node {
     private:
         const int mID;

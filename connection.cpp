@@ -3,12 +3,11 @@
 
 using namespace std;
 
-Connection::Connection(Node* f, Node* t, double w) : mWeight(w), mFrom(f), mTo(t) {
+Connection::Connection(Node* f, Node* t, double w) : mWeight(w), mFrom(f), mTo(t), mCache(0) {
     //put all connection logic
 }
 
 Connection::Connection() {
-
 }
 
 double Connection::getWeight(){
@@ -19,9 +18,17 @@ void Connection::setWeight(double w){
     mWeight = w;
 }
 
-//increments the value of mTo by the value of mFrom * connection weight
+double Connection::getCache(){
+    return mCache;
+}
+
+void Connection::cacheResult(){
+    mCache = mFrom->getValue() * mWeight;
+}
+
+//increments the value of mTo by the cache
 void Connection::feedForward(){
-    mTo->incValue(mFrom->getValue() * mWeight);
+    mTo->incValue(mCache);
 }
 
 //overload << operator so that we can cout << connection;
