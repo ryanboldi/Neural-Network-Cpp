@@ -1,4 +1,5 @@
 #include "node.h"
+#include <math.h>
 
 //default constructor
 Node::Node(int Id) : mID(Id), mValue(0) {}
@@ -23,4 +24,9 @@ int Node::getId(){
 
 void Node::incValue(double num){
     mValue += num;
+}
+
+void Node::activate(){
+    //logisitc sigmoid
+    mValue = 1 / (1 + exp(-mValue));
 }

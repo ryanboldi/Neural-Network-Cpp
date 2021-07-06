@@ -14,23 +14,13 @@ int main(){
 
     cout << n << endl;
 
-    n.feedForward({56, 21});
+    n.feedForward({0.2, 1.7});
 
     cout << n << endl;
 
-    n.feedForward({56, 21});
-
+    n.feedForward({0.2, 1.7});
     cout << n << endl;
 
-    n.feedForward({56, 21});
-
-    cout << n << endl;
-
-    n.feedForward({56, 21});
-
-    cout << n << endl;
-
-    n.feedForward({56, 21});
-
-    cout << n << endl;
+    n.feedForward({0.2, 1.7});
+    
 }

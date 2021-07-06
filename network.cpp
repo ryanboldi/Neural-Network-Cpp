@@ -60,6 +60,10 @@ void Network::feedForward(std::vector<double> inputs){
     for (int i = 0; i < length; i++){
         mConnections[i].feedForward();
     }
+
+    for (int i = 0; i < mNodes.size(); i++){
+        mNodes[i].activate();
+    }
 }
 
 
