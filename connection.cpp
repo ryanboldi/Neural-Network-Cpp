@@ -33,6 +33,6 @@ void Connection::feedForward(){
 
 //overload << operator so that we can cout << connection;
 ostream& operator<<(ostream& os, const Connection& con){
-    os << con.mFrom->getValue() << " --(" << con.mWeight << ")-> " << con.mTo->getValue() << endl;
+    os << con.mFrom->getId() << " ("<< con.mFrom->getValue() << ") --(" << con.mWeight << ")-> " << con.mTo->getId() << " (" << con.mTo->getValue() << ")" << endl;
     return os;
 }

@@ -21,8 +21,8 @@ class Connection{
         void setWeight(double w);
 
         double getCache();
-        void cacheResult();
 
+        void cacheResult();
         void feedForward();
 
         friend ostream& operator<<(ostream& os, const Connection& con);

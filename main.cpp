@@ -7,21 +7,25 @@
 using namespace std;
 
 int main(){
-    Node n(0, 0.1);
-    Node n1(1, 3);
+    Network n(2, 2, 2);
+    cout << n << endl;
+    n.Connect(0, 3, 5);
+    n.Connect(0, 2, 2);
+    n.Connect(2, 3, 6);
+    cout << n << endl;
+    n.setNodeValue(0, 1);
+    n.setNodeValue(1, 3);
+    n.setNodeValue(2, 0);
+    cout << n << endl;
+    n.feedForward();
+    cout << n << endl;
+    n.feedForward();
+    cout << n << endl;
+    n.feedForward();
+    cout << n << endl;
+    n.feedForward();
+    cout << n << endl;
+    n.feedForward();
+    cout << n << endl;
 
-    Connection c(&n, &n1, 2);
-    Connection c1(&n1, &n, 4);
-
-    cout << c << endl;
-    cout << c1 << endl;
-
-    c.cacheResult();
-    c1.cacheResult();
-
-    c.feedForward();
-    c1.feedForward();
-
-    cout << c << endl;
-    cout << c1 << endl;
 }
