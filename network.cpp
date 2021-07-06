@@ -2,6 +2,7 @@
 
 #include <vector>
 #include "node.h"
+#include <algorithm>
 
 using namespace std;
 
@@ -46,7 +47,7 @@ void Network::Connect(int index1, int index2, double w){
     mConnections.push_back(Connection(&mNodes[index1], &mNodes[index2], w));
 }
 
-void Network::feedForward(std::vector<double> inputs){
+std::vector<double> Network::feedForward(std::vector<double> inputs){
     for (int i = 0; i < mInputs; i++){
         mNodes[i].setValue(inputs[i]);
     }
@@ -64,6 +65,15 @@ void Network::feedForward(std::vector<double> inputs){
     for (int i = 0; i < mNodes.size(); i++){
         mNodes[i].activate();
     }
+
+    std::vector<Node> outputNodes(mNodes.end() - mOutputs, mNodes.end());
+    std::vector<double> outputValues;
+
+    for (int i = 0; i < outputNodes.size(); i++){
+        outputValues.push_back(outputNodes[i].getValue());
+    }
+
+    return outputValues;
 }
 
 

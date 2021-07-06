@@ -30,7 +30,7 @@ class Network{
 
         void Connect(int index1, int index2, double w);
 
-        void feedForward(std::vector<double> inputs);
+        std::vector<double> feedForward(std::vector<double> inputs);
 
         void fullyConnect();
         

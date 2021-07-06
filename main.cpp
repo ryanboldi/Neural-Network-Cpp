@@ -4,6 +4,8 @@
 #include "connection.h"
 #include "network.h"
 
+#include <iterator>
+
 using namespace std;
 
 int XOR(int a, int b);
@@ -16,12 +18,15 @@ int main(){
 
     cout << n << endl;
 
-    n.feedForward({0.2, 1.7});
+    auto result = n.feedForward({0.2, 1.7});
+    std::copy(result.begin(), result.end(), std::ostream_iterator<double>(std::cout, " "));
 
     cout << n << endl;
 
     n.feedForward({0.2, 1.7});
-    cout << n << endl;
+    
+    result = n.feedForward({0.2, 1.7});
+    std::copy(result.begin(), result.end(), std::ostream_iterator<double>(std::cout, " "));
 
     n.feedForward({0.2, 1.7});
 
