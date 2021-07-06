@@ -22,5 +22,4 @@ int main(){
     cout << n << endl;
 
     n.feedForward({0.2, 1.7});
-    
 }
