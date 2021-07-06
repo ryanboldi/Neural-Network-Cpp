@@ -10,9 +10,14 @@ class Network{
     private:
         std::vector<Node> mNodes;
         std::vector<Connection> mConnections;
+
+        int mInputs;
+        int mHidden;
+        int mOutputs;
     
     public:
         Network();
+        ~Network();
         Network(int inp, int hid, int out);
 
         int getNumNodes();
@@ -25,7 +30,10 @@ class Network{
 
         void Connect(int index1, int index2, double w);
 
-        void feedForward();
+        void feedForward(std::vector<double> inputs);
+
+        void fullyConnect();
+        
 
     friend ostream& operator<<(ostream& os, Network& net);
 };

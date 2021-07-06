@@ -10,6 +10,8 @@ Connection::Connection(Node* f, Node* t, double w) : mWeight(w), mFrom(f), mTo(t
 Connection::Connection() {
 }
 
+Connection::~Connection() {}
+
 double Connection::getWeight(){
     return mWeight;
 }

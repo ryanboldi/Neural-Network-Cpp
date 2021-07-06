@@ -17,6 +17,8 @@ class Connection{
         Connection(); 
         Connection(Node* f, Node* t, double w);
 
+        ~Connection();
+
         double getWeight();
         void setWeight(double w);
 

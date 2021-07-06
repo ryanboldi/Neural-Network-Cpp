@@ -7,6 +7,8 @@ Node::Node(int Id, double v): mValue(v), mID(Id) {
 
 }
 
+Node::~Node() {}
+
 double Node::getValue(){
     return mValue;
 }

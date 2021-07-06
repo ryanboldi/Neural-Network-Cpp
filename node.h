@@ -10,6 +10,8 @@ class Node {
         Node(int Id);
         Node(int Id, double v);
 
+        ~Node();
+
         double getValue();
         void setValue(double v);
 
