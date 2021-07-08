@@ -20,6 +20,14 @@ void Connection::setWeight(double w){
     mWeight = w;
 }
 
+void Connection::setFrom(Node* n){
+    mFrom = n;
+}
+
+void Connection::setTo(Node* n){
+    mTo = n;
+}
+
 double Connection::getCache(){
     return mCache;
 }
@@ -32,6 +40,15 @@ void Connection::cacheResult(){
 void Connection::feedForward(){
     mTo->incValue(mCache);
 }
+
+const int Connection::getFromID() const {
+    return mFrom->getId();
+}
+
+const int Connection::getToID() const {
+    return mTo->getId();
+}
+
 
 //overload << operator so that we can cout << connection;
 ostream& operator<<(ostream& os, const Connection& con){

@@ -19,9 +19,10 @@ class Network{
         Network();
         ~Network();
         Network(int inp, int hid, int out);
+        Network(const Network&);
 
-        int getNumNodes();
-        int getNumConnections();
+        const int getNumNodes() const;
+        const int getNumConnections() const;
 
         Node getNodeAt(int index);
         void setNodeValue(int index, double v);
@@ -33,6 +34,10 @@ class Network{
         std::vector<double> feedForward(std::vector<double> inputs);
 
         void fullyConnect();
+
+        Network addRandomConnection();
+        Network mutRandomConnection();
+
         
 
     friend ostream& operator<<(ostream& os, Network& net);

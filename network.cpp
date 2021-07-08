@@ -1,9 +1,9 @@
-#include "network.h"
-
 #include <vector>
-#include "node.h"
 #include <algorithm>
+#include <stdlib.h>
 
+#include "network.h"
+#include "node.h"
 using namespace std;
 
 Network::Network () : Network::Network(1, 1, 1) {}
@@ -23,11 +23,25 @@ Network::~Network(){
 
 }
 
-int Network::getNumNodes (){
+Network::Network(const Network& other){
+    mNodes = std::vector<Node>(other.mNodes); 
+    mConnections = other.mConnections;
+
+    for (int i = 0; i < other.getNumConnections(); i++){
+        int indexOfIn = mConnections[i].getFromID();
+        int indexOfOut = mConnections[i].getToID();
+
+        mConnections[i].setFrom(&mNodes[0] + indexOfIn);
+        mConnections[i].setTo(&mNodes[0] + indexOfOut);
+    }
+}
+
+
+const int Network::getNumNodes () const{
     return mNodes.size();
 }
 
-int Network::getNumConnections(){
+const int Network::getNumConnections() const{
     return mConnections.size();
 }
 
@@ -87,6 +101,10 @@ void Network::fullyConnect(){
             }
         }
     }
+}
+
+Network Network::addRandomConnection(){
+    return Network(0, 0, 0);
 }
 
 //overload << operator so that we can cout << network;

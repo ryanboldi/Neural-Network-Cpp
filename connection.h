@@ -22,10 +22,16 @@ class Connection{
         double getWeight();
         void setWeight(double w);
 
+        void setFrom(Node*);
+        void setTo(Node*);
+
         double getCache();
 
         void cacheResult();
         void feedForward();
+
+        const int getFromID() const;
+        const int getToID() const;
 
         friend ostream& operator<<(ostream& os, const Connection& con);
 };

@@ -13,12 +13,32 @@ double eval(Network n);
 double getError(Network n, std::vector<double> inputs, std::vector<double> expOutputs);
 
 int main(){
+    //Network n(2, 1, 1);
+    //cout << n << endl;
+
+    //n.fullyConnect();
+
+    //cout << eval(n);
+
+    //test copy constructor
     Network n(2, 1, 1);
+    n.fullyConnect();
     cout << n << endl;
 
-    n.fullyConnect();
+    Network n1(n);
+    
+    cout << "n1: " << endl << n1 << endl;
 
-    cout << eval(n);
+    n1.Connect(0, 2, 69);
+    cout << n1 << endl;
+
+    n1.feedForward({3, 1});
+    n.feedForward({3, 1});
+
+    cout << "made it past feed forward alive" << endl;
+
+    cout << n << endl;
+    cout << n1 << endl;
 
     //cout << n << endl;
 
@@ -29,8 +49,6 @@ int main(){
     //cout << "XOR(0, 1) = " << XOR(0, 1);
     //cout << "XOR(1, 0) = " << XOR(1, 0);
     //cout << "XOR(1, 1) = " << XOR(1, 1);
-
-    
 }
 
 double eval(Network n){
